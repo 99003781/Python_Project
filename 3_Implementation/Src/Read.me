@@ -1,1 +1,71 @@
+import pandas as pd
 
+def Read_Excel_File():
+
+    # to take the file name
+
+    input_file = input("Enter file name: ")
+    file_name = pd.ExcelFile(input_file)
+    name_of_sheets = file_name.sheet_names
+
+    num_of_sheets = len(name_of_sheets)
+
+    #loop for printing the name of sheets in file
+
+    print('\n')
+    for i in range(num_of_sheets):
+        print(i+1,name_of_sheets[i])
+
+
+    user_choice = int(input("\nIn which Sheet you want to search: "))
+
+    sheet_df = pd.read_excel(file_name, sheet_name = name_of_sheets[user_choice-1])
+    head_of_sheet = sheet_df.head()
+    heads_list = list(head_of_sheet)
+    num_of_heads = len(heads_list)
+
+    #loop for printing the name of rows in sheet
+
+    print('\n')
+    for j in range(num_of_heads):
+        print(j+1,heads_list[j])
+
+
+    parameter = int(input("\nSelect the Parameter for search: "))
+
+    row_df = pd.read_excel(file_name, sheet_name = name_of_sheets[user_choice-1])
+    row_data = row_df[[heads_list[parameter-1]]]
+    row_data_dtype = row_data.dtypes
+    dtype_head = row_data_dtype.head()
+    res5 = list(dtype_head)
+    res6 = res5[0]
+
+    res7 = (row_data.values.tolist())
+    length_of_res7 = len(res7)
+
+    my_list = []
+
+    if res6 == 'int64':
+        temp = int(input("\nEnter Data for you want to search: "))
+        my_list.append(temp)
+
+    elif res6 == 'object':
+        temp = str(input("\nEnter Data for you want to search: "))
+        my_list.append(temp)
+
+    elif res6 == 'float64':
+        temp = float(input("\nEnter Data for you want to search: "))
+        my_list.append(temp)
+
+
+    temp3 = res7.index(my_list)
+
+    shiv = sheet_df.iloc[temp3]
+
+
+    sheet_name = input("\n Enter the New Sheet name:  ")
+
+    shiv2 = shiv.to_excel(excel_writer = file_name,sheet_name = sheet_name)
+
+
+Read_Excel_File()
