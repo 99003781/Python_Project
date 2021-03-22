@@ -5,3 +5,4 @@
 
 ## LLR Design
 
+![Capture1](https://user-images.githubusercontent.com/78873487/111984745-c8981300-8b31-11eb-93aa-b01bca7b1d30.JPG)
