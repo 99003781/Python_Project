@@ -9,7 +9,8 @@
     3. Save the data into mastersheet, in same excel file
     
 ## SWOT ANALYSIS
-![swat](https://user-images.githubusercontent.com/78873487/111983956-c2556700-8b30-11eb-898c-29bbd2018f9a.JPG)
+![bsdbdjsdbj](https://user-images.githubusercontent.com/78873487/111984397-54f60600-8b31-11eb-8ef8-84cf67707eb8.JPG)
+
 
 
 # 4W&#39;s and 1&#39;H
